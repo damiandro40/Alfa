@@ -12,7 +12,7 @@ const terminate = (socket, io, payload) => {
         date: Date.now()
     }
 
-    if(payload.tail) {
+    if(typeof payload === 'object' && payload.tail) {
         response.tail = payload.tail
     }
 
