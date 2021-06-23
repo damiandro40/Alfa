@@ -2,6 +2,7 @@ const express = require('express')
 const cookies = require('cookie-parser')
 const useragent = require('express-useragent')
 const initializeSockets = require('./config/sockets')
+const initializeRoutes = require('./config/routes')
 require('dotenv/config')
 
 const app = express()
@@ -17,6 +18,7 @@ const server = app.listen(port, () => {
 })
 
 initializeSockets(server)
+initializeRoutes(app)
 
 
 
