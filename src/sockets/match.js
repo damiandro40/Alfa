@@ -8,7 +8,7 @@ const match = (socket, io, payload) => {
 
     let users = getAllUsers(io, socket.id)
 
-    if(socket.appData.keywords.length > 0 && socket.appData.matchCount <= 10) {
+    if(socket.appData.keywords.length > 0 && socket.appData.matchCount < 11) {
         users = removeNonpriorUsers(users)
         users = sortPriorUsersByKeywords(users, socket.appData.keywords)
     } 
