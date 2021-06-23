@@ -3,7 +3,11 @@ const fs = require('fs')
 const path = require('path')
 
 const initializeSockets = (server) => {
-    const io = new Server(server)
+    const io = new Server(server, {
+        cors: {
+            origin: '*'
+        }
+    })
 
     io.on('connection', (socket) => {
 
