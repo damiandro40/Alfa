@@ -29,6 +29,7 @@ const attachKeywords = (io, id, keywords) => {
 
     for(i = 0; i < 5; i++) {
         const keyword = keywords[i]
+        if(typeof keyword === 'undefined') break
         io.of('/').sockets.get(id).appData.keywords.push(keyword.toLowerCase())
     } 
 }
